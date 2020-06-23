@@ -8,9 +8,14 @@ namespace TextProcessor
     {
         static void Main(string[] args)
         {
-            string pattern = "I am the one who knows the words";
-            string phrase = "the words i am the one who knows";
-            var result = TextProcessor(pattern, phrase);
+            //Pattern - the phrase should look like given below
+            string pattern = "<Text>i am the one who knows the words</Text>";
+            //Recognized pharee - the phrase looks like given below (wrong words order, multiple lines based on <Text> tags
+            string phrase = "<Text>the words</Text><Text>i am the one who knows</Text>";
+            //Text separators (like tags)
+            string[] separators = { "<Text>", "</Text>" };
+
+            var result = TextProcessor(pattern, phrase, separators);
 
             if(result)
             {
@@ -20,23 +25,25 @@ namespace TextProcessor
             {
                 Console.WriteLine("The pattern and a given phrase does not contain the same words");
             }
+
             Console.ReadKey();
         }
 
-        private static bool TextProcessor(string pattern, string word)
+        private static bool TextProcessor(string pattern, string phrase, string[] separators)
         {
-            if (word == null)
+            if (phrase == null)
             {
                 return false;
             }
             else
             {
-                string result = string.Empty;
-                var joined = string.Join(" ", pattern.ToLower());
+                var splittedPattern = pattern.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var joined = string.Join(" ", splittedPattern);
                 string[] splittedText = joined.Split(' ');
                 var sortedSplittedText = splittedText.OrderByDescending(x => x.Length).ToArray();
 
-                var joinedWord = string.Join(" ", word);
+                var splittedPhrase = phrase.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var joinedWord = string.Join(" ", splittedPhrase);
                 var clearedJoinedWord = Regex.Replace(joinedWord, @"\s", "");
 
                 string temp = string.Empty;
@@ -66,8 +73,6 @@ namespace TextProcessor
                     return false;
                 }
             }
-                
         }
-
     }
 }
