@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessor", "TextProcessor\TextProcessor.csproj", "{3EF7FAB8-77CE-4B4B-83FE-9A0EB26D1A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextProcessor", "TextProcessor\TextProcessor.csproj", "{3EF7FAB8-77CE-4B4B-83FE-9A0EB26D1A02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{533C7EBB-F4C4-444E-9BAD-FD398E921312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessorTest", "TextProcessorTest\TextProcessorTest.csproj", "{7AF52394-3653-4B6C-BE0F-66F39AEF3398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{3EF7FAB8-77CE-4B4B-83FE-9A0EB26D1A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF7FAB8-77CE-4B4B-83FE-9A0EB26D1A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF7FAB8-77CE-4B4B-83FE-9A0EB26D1A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF52394-3653-4B6C-BE0F-66F39AEF3398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF52394-3653-4B6C-BE0F-66F39AEF3398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF52394-3653-4B6C-BE0F-66F39AEF3398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF52394-3653-4B6C-BE0F-66F39AEF3398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AF52394-3653-4B6C-BE0F-66F39AEF3398} = {533C7EBB-F4C4-444E-9BAD-FD398E921312}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CBA94ED-9A97-4DA6-9577-FBE601B69DE1}
